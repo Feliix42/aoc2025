@@ -1,6 +1,5 @@
 use std::fmt::Write;
 use std::str::FromStr;
-//use std::io::Write;
 
 #[cfg(not(debug_assertions))]
 static IN_FILE: &str = "input.txt";
@@ -35,7 +34,7 @@ fn main() -> std::io::Result<()> {
 
             // part 2
             'outer: for sub_len in 1..=(tmp.len() / 2) {
-                if tmp.len() % sub_len != 0 {
+                if !tmp.len().is_multiple_of(sub_len) {
                     continue;
                 }
 

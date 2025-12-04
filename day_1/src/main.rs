@@ -21,7 +21,7 @@ fn main() -> std::io::Result<()> {
         let line = line?;
 
         let delta = i32::from_str(&line[1..]).expect("failed to parse");
-        match line.chars().nth(0).unwrap() {
+        match line.chars().next().unwrap() {
             'R' => acc += delta,
             'L' => acc -= delta,
             _ => panic!("Malformed input returned invalid value for rotation direction"),
